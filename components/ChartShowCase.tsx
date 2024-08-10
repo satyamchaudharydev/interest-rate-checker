@@ -60,13 +60,13 @@ export function ChartShowcase({ data }: { data: any }) {
                 const count = payload[0].payload.count;
 
                 return (
-                  <div>
-                    <span className="text-[40px] top-3 relative mr-2">
+                  <div className="flex max-w-max items-center" >
+                    <div className="text-[40px] relative mr-2">
                       {count}
-                    </span>
-                    <span className="text-left">
+                    </div>
+                    <div className="">
                       lenders are offering <br /> at {rate}%
-                    </span>
+                    </div>
                   </div>
                 );
                 // return [`${count} visitors at ${rate}%`, ""]
@@ -79,7 +79,9 @@ export function ChartShowcase({ data }: { data: any }) {
               //   background: "red"
               //  }}
               content={
-                <ChartTooltipContent className="backdrop-blur-sm bg-[rgba(255,255,255,0.59)]" />
+                <ChartTooltipContent className="backdrop-blur-sm bg-[rgba(255,255,255)] border text-[#111] p-3"  style={{
+                  boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.05)",
+                }} />
               }
             />
             <Bar dataKey="rate" fill="#AEDC91" radius={4} activeBar />
