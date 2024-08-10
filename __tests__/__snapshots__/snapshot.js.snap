@@ -1,0 +1,606 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders homepage unchanged 1`] = `
+<div>
+  <div
+    class="flex h-[100vh] max-md:flex-col "
+  >
+    <div
+      class="basis-[80%] p-4 flex flex-col gap-8 mt-2 "
+    >
+      <div
+        class="w-full justify-between flex items-center"
+      >
+        <h1
+          class="text-[20px] text-[#070707] font-[600] text-left"
+        >
+          Interest Rate Overview
+        </h1>
+        <button
+          class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary mt-4 css-sghohy-MuiButtonBase-root-MuiButton-root"
+          style="background-color: rgb(76, 167, 81); color: rgb(255, 255, 255); border-radius: 4px; padding: 8px 16px; font-size: 14px; font-weight: 600; text-transform: capitalize; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05);"
+          tabindex="0"
+          type="button"
+        >
+          Download Chart
+          <span
+            class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+          />
+        </button>
+      </div>
+      <div
+        class="border rounded-lg bg-white relative overflow-hidden"
+        style="box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05);"
+      >
+        <div>
+          <div
+            class="MuiCardContent-root css-46bh2p-MuiCardContent-root"
+          >
+            <div
+              class="flex aspect-video justify-center text-xs [&_.recharts-cartesian-axis-tick_text]:fill-muted-foreground [&_.recharts-cartesian-grid_line[stroke='#ccc']]:stroke-border/50 [&_.recharts-curve.recharts-tooltip-cursor]:stroke-border [&_.recharts-dot[stroke='#fff']]:stroke-transparent [&_.recharts-layer]:outline-none [&_.recharts-polar-grid_[stroke='#ccc']]:stroke-border [&_.recharts-radial-bar-background-sector]:fill-muted [&_.recharts-rectangle.recharts-tooltip-cursor]:fill-muted [&_.recharts-reference-line_[stroke='#ccc']]:stroke-border [&_.recharts-sector[stroke='#fff']]:stroke-transparent [&_.recharts-sector]:outline-none [&_.recharts-surface]:outline-none"
+              data-chart="chart-r0"
+            >
+              <style>
+                
+ [data-chart=chart-r0] {
+  --color-rate: red;
+  --color-count: green;
+}
+
+
+.dark [data-chart=chart-r0] {
+  --color-rate: red;
+  --color-count: green;
+}
+
+              </style>
+              <div
+                class="recharts-responsive-container"
+                style="width: 100%; height: 100%; min-width: 0;"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          class="absolute top-0 left-0 right-0 flex justify-center  bg-[rgba(255,255,255,0.4)] p-4  h-full backdrop-blur-sm"
+          data-testid="loader"
+        >
+          <span
+            animate="[object Object]"
+            class="ml-2"
+            exit="[object Object]"
+            initial="[object Object]"
+            transition="[object Object]"
+          >
+            <svg
+              class="container"
+              viewBox="25 25 50 50"
+            >
+              <circle
+                class="loader"
+                cx="50"
+                cy="50"
+                r="20"
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div
+      class="basis-[20%]"
+    >
+      <div
+        class="h-full bg-white w-full border p-7 px-4"
+        style="box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05);"
+      >
+        <h2
+          class="text-[#070707] text-left text-[1rem] font-[600]"
+        >
+          Explore rate options
+        </h2>
+        <div
+          class="mt-[2rem] flex flex-col gap-3 p-4 rounded-xl bg-[#FAFBFC]"
+        >
+          <div
+            class="flex flex-col"
+          >
+            <label
+              class="text-[#070707] !text-[12px] w-fit mb-2"
+            >
+              Credit Score Range
+            </label>
+            <div
+              class="mx-2"
+            >
+              <div
+                class="relative flex justify-center items-center"
+              >
+                <span
+                  class="MuiSlider-root MuiSlider-marked MuiSlider-colorPrimary MuiSlider-sizeMedium css-5355ny-MuiSlider-root"
+                >
+                  <span
+                    class="MuiSlider-rail css-7o8aqz-MuiSlider-rail"
+                  />
+                  <span
+                    class="MuiSlider-track css-ttgsjq-MuiSlider-track"
+                    style="left: 41.666666666666664%; width: 16.66666666666667%;"
+                  />
+                  <span
+                    class="MuiSlider-mark css-hzp7sc-MuiSlider-mark"
+                    data-index="0"
+                    style="left: 0%;"
+                  />
+                  <span
+                    aria-hidden="true"
+                    class="MuiSlider-markLabel MuiSlider-markLabel css-1bvr8oc-MuiSlider-markLabel"
+                    data-index="0"
+                    style="left: 0%;"
+                  >
+                    600
+                  </span>
+                  <span
+                    class="MuiSlider-mark css-hzp7sc-MuiSlider-mark"
+                    data-index="1"
+                    style="left: 8.333333333333334%;"
+                  />
+                  <span
+                    aria-hidden="true"
+                    class="MuiSlider-markLabel MuiSlider-markLabel css-1bvr8oc-MuiSlider-markLabel"
+                    data-index="1"
+                    style="left: 8.333333333333334%;"
+                  />
+                  <span
+                    class="MuiSlider-mark css-hzp7sc-MuiSlider-mark"
+                    data-index="2"
+                    style="left: 16.666666666666668%;"
+                  />
+                  <span
+                    aria-hidden="true"
+                    class="MuiSlider-markLabel MuiSlider-markLabel css-1bvr8oc-MuiSlider-markLabel"
+                    data-index="2"
+                    style="left: 16.666666666666668%;"
+                  />
+                  <span
+                    class="MuiSlider-mark css-hzp7sc-MuiSlider-mark"
+                    data-index="3"
+                    style="left: 25%;"
+                  />
+                  <span
+                    aria-hidden="true"
+                    class="MuiSlider-markLabel MuiSlider-markLabel css-1bvr8oc-MuiSlider-markLabel"
+                    data-index="3"
+                    style="left: 25%;"
+                  />
+                  <span
+                    class="MuiSlider-mark css-hzp7sc-MuiSlider-mark"
+                    data-index="4"
+                    style="left: 33.333333333333336%;"
+                  />
+                  <span
+                    aria-hidden="true"
+                    class="MuiSlider-markLabel MuiSlider-markLabel css-1bvr8oc-MuiSlider-markLabel"
+                    data-index="4"
+                    style="left: 33.333333333333336%;"
+                  />
+                  <span
+                    class="MuiSlider-mark MuiSlider-markActive css-z5sdnj-MuiSlider-mark"
+                    data-index="5"
+                    style="left: 41.666666666666664%;"
+                  />
+                  <span
+                    aria-hidden="true"
+                    class="MuiSlider-markLabel MuiSlider-markLabel MuiSlider-markLabelActive css-1ucwjgd-MuiSlider-markLabel"
+                    data-index="5"
+                    style="left: 41.666666666666664%;"
+                  />
+                  <span
+                    class="MuiSlider-mark MuiSlider-markActive css-z5sdnj-MuiSlider-mark"
+                    data-index="6"
+                    style="left: 50%;"
+                  />
+                  <span
+                    aria-hidden="true"
+                    class="MuiSlider-markLabel MuiSlider-markLabel MuiSlider-markLabelActive css-1ucwjgd-MuiSlider-markLabel"
+                    data-index="6"
+                    style="left: 50%;"
+                  />
+                  <span
+                    class="MuiSlider-mark MuiSlider-markActive css-z5sdnj-MuiSlider-mark"
+                    data-index="7"
+                    style="left: 58.333333333333336%;"
+                  />
+                  <span
+                    aria-hidden="true"
+                    class="MuiSlider-markLabel MuiSlider-markLabel MuiSlider-markLabelActive css-1ucwjgd-MuiSlider-markLabel"
+                    data-index="7"
+                    style="left: 58.333333333333336%;"
+                  />
+                  <span
+                    class="MuiSlider-mark css-hzp7sc-MuiSlider-mark"
+                    data-index="8"
+                    style="left: 66.66666666666667%;"
+                  />
+                  <span
+                    aria-hidden="true"
+                    class="MuiSlider-markLabel MuiSlider-markLabel css-1bvr8oc-MuiSlider-markLabel"
+                    data-index="8"
+                    style="left: 66.66666666666667%;"
+                  />
+                  <span
+                    class="MuiSlider-mark css-hzp7sc-MuiSlider-mark"
+                    data-index="9"
+                    style="left: 75%;"
+                  />
+                  <span
+                    aria-hidden="true"
+                    class="MuiSlider-markLabel MuiSlider-markLabel css-1bvr8oc-MuiSlider-markLabel"
+                    data-index="9"
+                    style="left: 75%;"
+                  />
+                  <span
+                    class="MuiSlider-mark css-hzp7sc-MuiSlider-mark"
+                    data-index="10"
+                    style="left: 83.33333333333333%;"
+                  />
+                  <span
+                    aria-hidden="true"
+                    class="MuiSlider-markLabel MuiSlider-markLabel css-1bvr8oc-MuiSlider-markLabel"
+                    data-index="10"
+                    style="left: 83.33333333333333%;"
+                  />
+                  <span
+                    class="MuiSlider-mark css-hzp7sc-MuiSlider-mark"
+                    data-index="11"
+                    style="left: 91.66666666666667%;"
+                  />
+                  <span
+                    aria-hidden="true"
+                    class="MuiSlider-markLabel MuiSlider-markLabel css-1bvr8oc-MuiSlider-markLabel"
+                    data-index="11"
+                    style="left: 91.66666666666667%;"
+                  />
+                  <span
+                    class="MuiSlider-mark css-hzp7sc-MuiSlider-mark"
+                    data-index="12"
+                    style="left: 100%;"
+                  />
+                  <span
+                    aria-hidden="true"
+                    class="MuiSlider-markLabel MuiSlider-markLabel css-1bvr8oc-MuiSlider-markLabel"
+                    data-index="12"
+                    style="left: 100%;"
+                  >
+                    840
+                  </span>
+                  <span
+                    class="MuiSlider-thumb MuiSlider-thumbSizeMedium MuiSlider-thumbColorPrimary MuiSlider-thumb MuiSlider-thumbSizeMedium MuiSlider-thumbColorPrimary css-cp2j25-MuiSlider-thumb"
+                    data-index="0"
+                    style="left: 41.666666666666664%;"
+                  >
+                    <input
+                      aria-label="Minimum price"
+                      aria-orientation="horizontal"
+                      aria-valuemax="840"
+                      aria-valuemin="600"
+                      aria-valuenow="700"
+                      data-index="0"
+                      max="300"
+                      min="0"
+                      step="25"
+                      style="border: 0px; height: 100%; margin: -1px; overflow: hidden; padding: 0px; position: absolute; white-space: nowrap; width: 100%; direction: ltr;"
+                      type="range"
+                      value="125"
+                    />
+                    <span
+                      aria-hidden="true"
+                      class="MuiSlider-valueLabel css-14gyywz-MuiSlider-valueLabel"
+                    >
+                      <span
+                        class="MuiSlider-valueLabelCircle"
+                      >
+                        <span
+                          class="MuiSlider-valueLabelLabel"
+                        >
+                          700
+                        </span>
+                      </span>
+                    </span>
+                    <span
+                      class="airbnb-bar"
+                    />
+                    <span
+                      class="airbnb-bar"
+                    />
+                    <span
+                      class="airbnb-bar"
+                    />
+                  </span>
+                  <span
+                    class="MuiSlider-thumb MuiSlider-thumbSizeMedium MuiSlider-thumbColorPrimary MuiSlider-thumb MuiSlider-thumbSizeMedium MuiSlider-thumbColorPrimary css-cp2j25-MuiSlider-thumb"
+                    data-index="1"
+                    style="left: 58.333333333333336%;"
+                  >
+                    <input
+                      aria-label="Maximum price"
+                      aria-orientation="horizontal"
+                      aria-valuemax="840"
+                      aria-valuemin="600"
+                      aria-valuenow="740"
+                      data-index="1"
+                      max="300"
+                      min="0"
+                      step="25"
+                      style="border: 0px; height: 100%; margin: -1px; overflow: hidden; padding: 0px; position: absolute; white-space: nowrap; width: 100%; direction: ltr;"
+                      type="range"
+                      value="175"
+                    />
+                    <span
+                      aria-hidden="true"
+                      class="MuiSlider-valueLabel css-14gyywz-MuiSlider-valueLabel"
+                    >
+                      <span
+                        class="MuiSlider-valueLabelCircle"
+                      >
+                        <span
+                          class="MuiSlider-valueLabelLabel"
+                        >
+                          740
+                        </span>
+                      </span>
+                    </span>
+                    <span
+                      class="airbnb-bar"
+                    />
+                    <span
+                      class="airbnb-bar"
+                    />
+                    <span
+                      class="airbnb-bar"
+                    />
+                  </span>
+                </span>
+                <div
+                  class="text-black absolute top-[25px] "
+                >
+                  <p
+                    class="MuiTypography-root MuiTypography-body2 text-[#3a8589] css-r40f8v-MuiTypography-root"
+                  >
+                    700
+                    -
+                    740
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="flex flex-col"
+          >
+            <label
+              class="text-[#070707] !text-[12px] w-fit mb-2"
+            >
+              Choose Your State
+               
+            </label>
+            <div
+              class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary h-10 css-1yk1gt9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root"
+            >
+              <div
+                aria-controls=":r1:"
+                aria-expanded="false"
+                aria-haspopup="listbox"
+                class="MuiSelect-select MuiSelect-outlined MuiInputBase-input MuiOutlinedInput-input css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input"
+                role="combobox"
+                tabindex="0"
+              >
+                Alabama
+              </div>
+              <input
+                aria-hidden="true"
+                aria-invalid="false"
+                class="MuiSelect-nativeInput css-yf8vq0-MuiSelect-nativeInput"
+                tabindex="-1"
+                value="AL"
+              />
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiSelect-icon MuiSelect-iconOutlined css-hfutr2-MuiSvgIcon-root-MuiSelect-icon"
+                data-testid="ArrowDropDownIcon"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M7 10l5 5 5-5z"
+                />
+              </svg>
+              <fieldset
+                aria-hidden="true"
+                class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+              >
+                <legend
+                  class="css-ihdtdm"
+                >
+                  <span
+                    class="notranslate"
+                  >
+                    ​
+                  </span>
+                </legend>
+              </fieldset>
+            </div>
+          </div>
+          <div
+            class="flex flex-col"
+          >
+            <label
+              class="text-[#070707] !text-[12px] w-fit mb-2"
+            >
+              Enter House Price
+               
+            </label>
+            <div
+              class="MuiFormControl-root MuiTextField-root !p-0 css-13f76rl-MuiFormControl-root-MuiTextField-root"
+            >
+              <div
+                class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl MuiInputBase-sizeSmall MuiInputBase-adornedStart css-1q6at85-MuiInputBase-root-MuiOutlinedInput-root"
+              >
+                <span
+                  style="margin-right: 20px;"
+                >
+                  $
+                </span>
+                <input
+                  aria-invalid="false"
+                  class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputSizeSmall MuiInputBase-inputAdornedStart css-1ua80n0-MuiInputBase-input-MuiOutlinedInput-input"
+                  id="outlined-basic"
+                  type="number"
+                  value="200000"
+                />
+                <fieldset
+                  aria-hidden="true"
+                  class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+                >
+                  <legend
+                    class="css-ihdtdm"
+                  >
+                    <span
+                      class="notranslate"
+                    >
+                      ​
+                    </span>
+                  </legend>
+                </fieldset>
+              </div>
+            </div>
+          </div>
+          <div
+            class="flex flex-col"
+          >
+            <label
+              class="text-[#070707] !text-[12px] w-fit mb-2"
+            >
+              Rate Type
+            </label>
+            <div
+              class="relative flex w-full h-10 bg-gray-100 rounded-lg p-0.5"
+            >
+              <button
+                aria-pressed="true"
+                class="flex-1 z-10 text-sm focus:outline-none text-black relative px-3"
+              >
+                <span
+                  class="relative z-10"
+                >
+                  Fixed
+                </span>
+                <div
+                  class="absolute inset-0 bg-white rounded-md shadow-md"
+                  layoutid="utby8wh"
+                  transition="[object Object]"
+                />
+              </button>
+              <button
+                aria-pressed="false"
+                class="flex-1 z-10 text-sm focus:outline-none text-black relative px-3"
+              >
+                <span
+                  class="relative z-10"
+                >
+                  Adjustable
+                </span>
+              </button>
+            </div>
+          </div>
+          <div
+            class="flex flex-col"
+          >
+            <label
+              class="text-[#070707] !text-[12px] w-fit mb-2"
+            >
+              Loan Term
+            </label>
+            <div
+              class="relative flex w-full h-10 bg-gray-100 rounded-lg p-0.5"
+            >
+              <button
+                aria-pressed="false"
+                class="flex-1 z-10 text-sm focus:outline-none text-black relative px-3"
+              >
+                <span
+                  class="relative z-10"
+                >
+                  15yr
+                </span>
+              </button>
+              <button
+                aria-pressed="true"
+                class="flex-1 z-10 text-sm focus:outline-none text-black relative px-3"
+              >
+                <span
+                  class="relative z-10"
+                >
+                  30yr
+                </span>
+                <div
+                  class="absolute inset-0 bg-white rounded-md shadow-md"
+                  layoutid="1fpm7"
+                  transition="[object Object]"
+                />
+              </button>
+            </div>
+          </div>
+          <div
+            class="flex flex-col"
+          >
+            <label
+              class="text-[#070707] !text-[12px] w-fit mb-2"
+            >
+              Loan Term
+            </label>
+            <div
+              class="relative flex w-full h-10 bg-gray-100 rounded-lg p-0.5"
+            >
+              <button
+                aria-pressed="true"
+                class="flex-1 z-10 text-sm focus:outline-none text-black relative px-3"
+              >
+                <span
+                  class="relative z-10"
+                >
+                  Conventional
+                </span>
+                <div
+                  class="absolute inset-0 bg-white rounded-md shadow-md"
+                  layoutid="mr0lh9"
+                  transition="[object Object]"
+                />
+              </button>
+              <button
+                aria-pressed="false"
+                class="flex-1 z-10 text-sm focus:outline-none text-black relative px-3"
+              >
+                <span
+                  class="relative z-10"
+                >
+                  FHA
+                </span>
+              </button>
+              <button
+                aria-pressed="false"
+                class="flex-1 z-10 text-sm focus:outline-none text-black relative px-3"
+              >
+                <span
+                  class="relative z-10"
+                >
+                  VA
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

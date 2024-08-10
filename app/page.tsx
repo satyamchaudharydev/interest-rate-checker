@@ -1,113 +1,169 @@
-import Image from "next/image";
+"use client";
+import { ChartShowcase } from "@/components/ChartShowCase";
+import { Panel } from "@/components/Panel";
+import axios from "axios";
+import { motion, AnimatePresence } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+import { Button } from "@mui/material";
+import { saveAs } from "file-saver";
+import { RateOptions } from "@/interfaces/types";
+
+const formatChartData = (data: any) => {
+  const chartData = Object.entries(data)
+    .map(([rate, count]) => {
+      return {
+        rate: Number(rate),
+        count: count,
+      };
+    })
+    .sort((a, b) => a.rate - b.rate);
+  return chartData;
+};
 
 export default function Home() {
+  const [data, setData] = useState<any[]>([]);
+  const [isFetching, setIsFetching] = useState(true);
+  const [rateOptions, setRateOptions] = useState<RateOptions>({
+    price: 200000,
+    loanAmount: 180000,
+    minfico: 700,
+    maxfico: 740,
+    state: "AL",
+    rateStructure: "fixed",
+    loanTerm: 30,
+    loanType: "conf",
+    armType: "5-1",
+  });
+  const chartRef = useRef(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      setIsFetching(true);
+      const response = await axios.get("/api/rate", {
+        params: {
+          price: rateOptions.price,
+          loan_amount: rateOptions.loanAmount,
+          minfico: rateOptions.minfico,
+          maxfico: rateOptions.maxfico,
+          state: rateOptions.state,
+          rate_structure: rateOptions.rateStructure,
+          loan_term: rateOptions.loanTerm,
+          loan_type: rateOptions.loanType,
+          arm_type: rateOptions.armType,
+        },
+      });
+      setIsFetching(false);
+      setData(formatChartData(response.data.data));
+    };
+    fetchData();
+  }, [rateOptions]);
+  const downloadChart = () => {
+    if (!chartRef.current) return;
+    let svgURL = new XMLSerializer().serializeToString(chartRef.current);
+    let svgBlob = new Blob([svgURL], { type: "image/svg+xml;charset=utf-8" });
+    saveAs(svgBlob, "chart.svg");
+  };
+  const handlePanelChange = (
+    newValue: string | number,
+    field: keyof RateOptions
+  ) => {
+    if (!newValue) return;
+    setRateOptions({
+      ...rateOptions,
+      [field]: newValue,
+    });
+  };
+  const handleOptionsChange = (input: any) => {
+    setRateOptions({
+      ...rateOptions,
+      ...input,
+    });
+  };
+  const renderChart = () => {
+    if (data.length === 0 && !isFetching) {
+      return (
+        <h6
+          className="text-[#0707078f]  absolute font-bold text-center
+      top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-[4vw]
+      "
+        >
+          No data available
+        </h6>
+      );
+    }
+  
+    return (
+      <div ref={chartRef}>
+        <ChartShowcase data={data} />
+      </div>
+    );
+  };
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <div
+      className="flex h-[100vh]
+      max-md:flex-col
+    "
+    >
+      <div className="basis-[80%] p-4 flex flex-col gap-8 mt-2 ">
+        <div className="w-full justify-between flex items-center">
+          <h1 className="text-[20px] text-[#070707] font-[600] text-left">
+            Interest Rate Overview
+          </h1>
+          <Button
+            variant="contained"
+            color="primary"
+            className="mt-4"
+            onClick={downloadChart}
+            style={{
+              backgroundColor: "#4CA751",
+              color: "#fff",
+              borderRadius: "4px",
+              padding: "8px 16px",
+              fontSize: "14px",
+              fontWeight: 600,
+              textTransform: "capitalize",
+              boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.05)",
+            }}
           >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+            Download Chart
+          </Button>
+        </div>
+        <div
+          className="border rounded-lg bg-white relative overflow-hidden"
+          style={{
+            boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.05)",
+          }}
+        >
+          {renderChart()}
+          <AnimatePresence>
+            {isFetching && (
+              <motion.div
+                data-testid="loader"
+                className="absolute top-0 left-0 right-0 flex justify-center  bg-[rgba(255,255,255,0.4)] p-4  h-full backdrop-blur-sm"
+              >
+                <motion.span
+                  className="ml-2"
+                  initial={{ y: -50, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  exit={{ y: -50, opacity: 0 }}
+                  transition={{ duration: 0.3, type: "spring" }}
+                >
+                  <svg viewBox="25 25 50 50" className="container">
+                    <circle cx="50" cy="50" r="20" className="loader"></circle>
+                  </svg>
+                </motion.span>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
       </div>
-
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
+      <div className="basis-[20%]">
+        <Panel
+          rateOptions={rateOptions}
+          handlePanelChange={handlePanelChange}
+          handleOptionsChange={handleOptionsChange}
         />
       </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+    </div>
   );
 }
