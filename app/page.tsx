@@ -52,8 +52,8 @@ export default function Home() {
           arm_type: rateOptions.armType,
         },
       });
-      setIsFetching(false);
       setData(formatChartData(response.data.data));
+      setIsFetching(false);
     };
     fetchData();
   }, [rateOptions]);
