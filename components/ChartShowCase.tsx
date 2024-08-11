@@ -43,7 +43,7 @@ export function ChartShowcase({ data }: { data: any }) {
               top: 20,
             }}
           >
-            <CartesianGrid vertical={true} opacity={0.2} />
+            <CartesianGrid vertical={true} horizontal={true} opacity={0.2} />
             <XAxis
               dataKey="rate"
               tickLine={false}
@@ -60,32 +60,24 @@ export function ChartShowcase({ data }: { data: any }) {
                 const count = payload[0].payload.count;
 
                 return (
-                  <div className="flex max-w-max items-center" >
-                    <div className="text-[40px] relative mr-2">
-                      {count}
-                    </div>
+                  <div className="flex max-w-max items-center">
+                    <div className="text-[40px] relative mr-2">{count}</div>
                     <div className="">
                       lenders are offering <br /> at {rate}%
                     </div>
                   </div>
                 );
-                // return [`${count} visitors at ${rate}%`, ""]
               }}
-              // labelClassName="text-textColor text-[14px] font-[600] first-letter:text-[18px]"
-              // label={""}
-
-              // labelFormatter={(label,payload) => ""}
-              //  cursorStyle={{
-              //   background: "red"
-              //  }}
               content={
-                <ChartTooltipContent className="backdrop-blur-sm bg-[rgba(255,255,255)] border text-[#111] p-3"  style={{
-                  boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.05)",
-                }} />
+                <ChartTooltipContent
+                  className="backdrop-blur-sm bg-[rgba(255,255,255)] border text-[#111] p-3"
+                  style={{
+                    boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.05)",
+                  }}
+                />
               }
             />
             <Bar dataKey="rate" fill="#AEDC91" radius={4} activeBar />
-            {/* <Bar dataKey="count" fill="red" radi/us={4} /> */}
             {/* <LabelList
                 position="top"
                 offset={12}

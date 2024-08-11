@@ -93,7 +93,7 @@ export default function Home() {
     }
 
     return (
-      <div ref={chartRef}>
+      <div ref={chartRef} className="w-full h-full">
         <ChartShowcase data={data} />
       </div>
     );
