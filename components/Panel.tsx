@@ -125,7 +125,7 @@ export const Panel = ({
         </div>
         <div className="flex flex-col">
           <label className="text-grayColor font-[500] !text-[12px] w-fit mb-2">
-            Loan Term
+            Loader Type
           </label>
           <CustomToggleButtonGroup
             options={loanTypeData}

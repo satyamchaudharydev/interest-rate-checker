@@ -216,11 +216,11 @@ export const rateType = [
 ];
 export const loanTerm = [
   {
-    label: "15yr",
+    label: "15 years",
     value: 15,
   },
   {
-    label: "30yr",
+    label: "30 years",
     value: 30,
   },
 ];
