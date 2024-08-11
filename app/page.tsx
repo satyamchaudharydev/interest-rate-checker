@@ -7,18 +7,8 @@ import { Button } from "@mui/material";
 import { saveAs } from "file-saver";
 import { RateOptions } from "@/interfaces/types";
 import { Loader } from "@/components/Loader";
+import { calculateLoanAmount, formatChartData } from "@/lib/utils";
 
-const formatChartData = (data: any) => {
-  const chartData = Object.entries(data)
-    .map(([rate, count]) => {
-      return {
-        rate: Number(rate),
-        count: count,
-      };
-    })
-    .sort((a, b) => a.rate - b.rate);
-  return chartData;
-};
 
 export default function Home() {
   const [data, setData] = useState<any[]>([]);
@@ -42,7 +32,7 @@ export default function Home() {
       const response = await axios.get("/api/rate", {
         params: {
           price: rateOptions.price,
-          loan_amount: rateOptions.loanAmount,
+          loan_amount: calculateLoanAmount(rateOptions.price),
           minfico: rateOptions.minfico,
           maxfico: rateOptions.maxfico,
           state: rateOptions.state,
