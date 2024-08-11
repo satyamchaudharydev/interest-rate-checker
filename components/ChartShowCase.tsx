@@ -34,7 +34,9 @@ const chartConfig = {
 export function ChartShowcase({ data }: { data: any }) {
   return (
     <>
-      <CardContent>
+      <CardContent style={{
+        overflow: "auto",
+      }}>
         <ChartContainer config={chartConfig} className="min-h-[200px] min-w-[200px]">
           <BarChart
            
