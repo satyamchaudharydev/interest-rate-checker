@@ -48,7 +48,7 @@ export function ChartShowcase({ data }: { data: any }) {
             <XAxis
               dataKey="rate"
               tickLine={false}
-              tickMargin={10}
+              // tickMargin={10}
               axisLine={false}
               tickFormatter={(value) => value + "%"}
             />
@@ -78,7 +78,7 @@ export function ChartShowcase({ data }: { data: any }) {
                 />
               }
             />
-            <Bar dataKey="rate" fill="#AEDC91" radius={4} activeBar />
+            <Bar dataKey="count" fill="#AEDC91" radius={4} activeBar />
             
           </BarChart>
         </ChartContainer>
