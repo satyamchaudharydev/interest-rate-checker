@@ -54,7 +54,7 @@ exports[`renders homepage unchanged 1`] = `
             class="MuiCardContent-root css-46bh2p-MuiCardContent-root"
           >
             <div
-              class="flex aspect-video justify-center text-xs [&_.recharts-cartesian-axis-tick_text]:fill-muted-foreground [&_.recharts-cartesian-grid_line[stroke='#ccc']]:stroke-border/50 [&_.recharts-curve.recharts-tooltip-cursor]:stroke-border [&_.recharts-dot[stroke='#fff']]:stroke-transparent [&_.recharts-layer]:outline-none [&_.recharts-polar-grid_[stroke='#ccc']]:stroke-border [&_.recharts-radial-bar-background-sector]:fill-muted [&_.recharts-rectangle.recharts-tooltip-cursor]:fill-muted [&_.recharts-reference-line_[stroke='#ccc']]:stroke-border [&_.recharts-sector[stroke='#fff']]:stroke-transparent [&_.recharts-sector]:outline-none [&_.recharts-surface]:outline-none"
+              class="flex aspect-video justify-center text-xs [&_.recharts-cartesian-axis-tick_text]:fill-muted-foreground [&_.recharts-cartesian-grid_line[stroke='#ccc']]:stroke-border/50 [&_.recharts-curve.recharts-tooltip-cursor]:stroke-border [&_.recharts-dot[stroke='#fff']]:stroke-transparent [&_.recharts-layer]:outline-none [&_.recharts-polar-grid_[stroke='#ccc']]:stroke-border [&_.recharts-radial-bar-background-sector]:fill-muted [&_.recharts-rectangle.recharts-tooltip-cursor]:fill-muted [&_.recharts-reference-line_[stroke='#ccc']]:stroke-border [&_.recharts-sector[stroke='#fff']]:stroke-transparent [&_.recharts-sector]:outline-none [&_.recharts-surface]:outline-none min-h-[200px] min-w-[200px]"
               data-chart="chart-r0"
             >
               <style>
@@ -522,7 +522,6 @@ exports[`renders homepage unchanged 1`] = `
                 </span>
                 <div
                   class="absolute inset-0 bg-white rounded-md shadow-md"
-                  layoutid="q9hsfm"
                   transition="[object Object]"
                 />
               </button>
@@ -570,7 +569,6 @@ exports[`renders homepage unchanged 1`] = `
                 </span>
                 <div
                   class="absolute inset-0 bg-white rounded-md shadow-md"
-                  layoutid="kmmu1"
                   transition="[object Object]"
                 />
               </button>
@@ -598,7 +596,6 @@ exports[`renders homepage unchanged 1`] = `
                 </span>
                 <div
                   class="absolute inset-0 bg-white rounded-md shadow-md"
-                  layoutid="4lnuaw"
                   transition="[object Object]"
                 />
               </button>

@@ -1,7 +1,8 @@
 module.exports = {
-    motion: {
-      div: 'div',
-      span: 'span',
-    },
-    AnimatePresence: ({ children }) => children,
-  };
+  motion: {
+    div: ({ children, layoutId, ...props }) => <div {...props}>{children}</div>,
+    span: ({ children, layoutId, ...props }) => <span {...props}>{children}</span>,
+    // Add other elements as needed
+  },
+  AnimatePresence: ({ children }) => children,
+};

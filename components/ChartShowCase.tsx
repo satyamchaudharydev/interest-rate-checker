@@ -35,8 +35,9 @@ export function ChartShowcase({ data }: { data: any }) {
   return (
     <>
       <CardContent>
-        <ChartContainer config={chartConfig}>
+        <ChartContainer config={chartConfig} className="min-h-[200px] min-w-[200px]">
           <BarChart
+           
             accessibilityLayer
             data={data}
             margin={{
@@ -78,12 +79,7 @@ export function ChartShowcase({ data }: { data: any }) {
               }
             />
             <Bar dataKey="rate" fill="#AEDC91" radius={4} activeBar />
-            {/* <LabelList
-                position="top"
-                offset={12}
-                className="fill-foreground"
-                fontSize={12}
-              /> */}
+            
           </BarChart>
         </ChartContainer>
       </CardContent>
