@@ -2,11 +2,11 @@
 import { ChartShowcase } from "@/components/ChartShowCase";
 import { Panel } from "@/components/Panel";
 import axios from "axios";
-import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { Button } from "@mui/material";
 import { saveAs } from "file-saver";
 import { RateOptions } from "@/interfaces/types";
+import { Loader } from "@/components/Loader";
 
 const formatChartData = (data: any) => {
   const chartData = Object.entries(data)
@@ -91,7 +91,7 @@ export default function Home() {
         </h6>
       );
     }
-  
+
     return (
       <div ref={chartRef}>
         <ChartShowcase data={data} />
@@ -106,12 +106,11 @@ export default function Home() {
     >
       <div className="basis-[80%] p-4 flex flex-col gap-8 mt-2 ">
         <div className="w-full justify-between flex items-center">
-          <h1 className="text-[20px] text-[#070707] font-[600] text-left">
+          <h1 className="text-[20px] text-textColor font-[600] text-left">
             Interest Rate Overview
           </h1>
           <Button
             variant="contained"
-            
             color="primary"
             className="mt-4"
             onClick={downloadChart}
@@ -126,42 +125,32 @@ export default function Home() {
               boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.05)",
             }}
             startIcon={
-              <svg width={16} fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
-</svg>
-
+              <svg
+                width={16}
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3"
+                />
+              </svg>
             }
           >
             Download Chart
           </Button>
         </div>
         <div
-          className="border rounded-lg bg-white relative overflow-hidden"
+          className="border rounded-lg bg-white relative overflow-hidden h-full"
           style={{
             boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.05)",
           }}
         >
           {renderChart()}
-          <AnimatePresence>
-            {isFetching && (
-              <motion.div
-                data-testid="loader"
-                className="absolute top-0 left-0 right-0 flex justify-center  bg-[rgba(255,255,255,0.4)] p-4  h-full backdrop-blur-sm"
-              >
-                <motion.span
-                  className="ml-2"
-                  initial={{ y: -50, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  exit={{ y: -50, opacity: 0 }}
-                  transition={{ duration: 0.3, type: "spring" }}
-                >
-                  <svg viewBox="25 25 50 50" className="container">
-                    <circle cx="50" cy="50" r="20" className="loader"></circle>
-                  </svg>
-                </motion.span>
-              </motion.div>
-            )}
-          </AnimatePresence>
+          <Loader isLoading={isFetching} />
         </div>
       </div>
       <div className="basis-[20%]">

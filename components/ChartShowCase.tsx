@@ -71,7 +71,7 @@ export function ChartShowcase({ data }: { data: any }) {
                 );
                 // return [`${count} visitors at ${rate}%`, ""]
               }}
-              // labelClassName="text-[#070707] text-[14px] font-[600] first-letter:text-[18px]"
+              // labelClassName="text-textColor text-[14px] font-[600] first-letter:text-[18px]"
               // label={""}
 
               // labelFormatter={(label,payload) => ""}

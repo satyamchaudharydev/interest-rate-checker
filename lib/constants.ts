@@ -241,69 +241,70 @@ export const loanTypeData = [
 
 export const marks = [
   {
-    value: 0,
-    scaledValue: 600,
+       value: 600,
     label: "600",
   },
   {
-    value: 25,
-    scaledValue: 620,
+        value: 620,
     label: "",
   },
   {
-    value: 50,
-    scaledValue: 640,
+        value: 640,
     label: "",
   },
   {
-    value: 75,
-    scaledValue: 660,
+        value: 660,
     label: "",
   },
   {
-    value: 100,
-    scaledValue: 680,
+    
+    value: 680,
     label: "",
   },
 
   {
-    value: 125,
-    scaledValue: 700,
+    
+    value: 700,
     label: "",
   },
   {
-    value: 150,
-    scaledValue: 720,
+    
+    value: 720,
     label: "",
   },
   {
-    value: 175,
-    scaledValue: 740,
+    
+    value: 740,
     label: "",
   },
   {
-    value: 200,
-    scaledValue: 760,
+    
+    value: 760,
     label: "",
   },
   {
-    value: 225,
-    scaledValue: 780,
+    
+    value: 780,
     label: "",
   },
   {
-    value: 250,
-    scaledValue: 800,
+    
+    value: 800,
     label: "",
   },
   {
-    value: 275,
-    scaledValue: 820,
+    
+    value: 820,
     label: "",
   },
   {
-    value: 300,
-    scaledValue: 840,
-    label: "840",
+    
+    value: 840,
+    label: "",
+  },
+  {
+    
+    value: 850,
+    label: "850",
   },
 ];

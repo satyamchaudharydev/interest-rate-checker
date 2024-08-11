@@ -46,12 +46,12 @@ export const Panel = ({
         boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.05)",
       }}
     >
-      <h2 className="text-[#070707] text-left text-[1rem] font-[600]">
+      <h2 className="text-textColor  text-left text-[1rem] font-[600]">
         Explore rate options
       </h2>
-      <div className="mt-[2rem] flex flex-col gap-3 p-4 rounded-xl bg-[#FAFBFC]">
+      <div className="mt-[2rem] flex flex-col gap-4 p-4 rounded-xl bg-[#FAFBFC]">
         <div className="flex flex-col">
-          <label className="text-[#070707] !text-[12px] w-fit mb-2">
+          <label className="text-grayColor font-[500] !text-[12px] w-fit mb-2">
             Credit Score Range
           </label>
           <div className="mx-2">
@@ -62,7 +62,7 @@ export const Panel = ({
           </div>
         </div>
         <div className="flex flex-col">
-          <label className="text-[#070707] !text-[12px] w-fit mb-2">
+          <label className="text-grayColor font-[500] !text-[12px] w-fit mb-2">
             Choose Your State{" "}
           </label>
           <Select
@@ -78,7 +78,7 @@ export const Panel = ({
           </Select>
         </div>
         <div className="flex flex-col">
-          <label className="text-[#070707] !text-[12px] w-fit mb-2">
+          <label className="text-grayColor font-[500] !text-[12px] w-fit mb-2">
             Enter House Price{" "}
           </label>
           <CssTextField
@@ -99,7 +99,7 @@ export const Panel = ({
         </div>
 
         <div className="flex flex-col">
-          <label className="text-[#070707] !text-[12px] w-fit mb-2">
+          <label className="text-grayColor font-[500] !text-[12px] w-fit mb-2">
             Rate Type
           </label>
           
@@ -112,7 +112,7 @@ export const Panel = ({
           />
         </div>
         <div className="flex flex-col">
-          <label className="text-[#070707] !text-[12px] w-fit mb-2">
+          <label className="text-grayColor font-[500] !text-[12px] w-fit mb-2">
             Loan Term
           </label>
           <CustomToggleButtonGroup
@@ -124,7 +124,7 @@ export const Panel = ({
           />
         </div>
         <div className="flex flex-col">
-          <label className="text-[#070707] !text-[12px] w-fit mb-2">
+          <label className="text-grayColor font-[500] !text-[12px] w-fit mb-2">
             Loan Term
           </label>
           <CustomToggleButtonGroup

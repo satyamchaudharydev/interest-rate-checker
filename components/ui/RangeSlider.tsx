@@ -1,15 +1,44 @@
 import { marks } from "@/lib/constants";
-import { Box, Slider, SliderThumb, Typography, styled } from "@mui/material";
+import {
+  Slider,
+  SliderThumb,
+  Typography,
+  styled,
+} from "@mui/material";
 import { useEffect, useState } from "react";
 
+const minScore = marks[0].value;
+const maxScore = marks[marks.length - 1].value;
+const totalSteps = marks.length;
+const stepSize = 20;
+
+const getColor = (value: number) => {
+  if (value <= 660) return "red";
+  if (value <= 700) return "orange";
+  return "green";
+};
+
+const createGradient = () => {
+  let gradient = "";
+  for (let i = 0; i < totalSteps; i++) {
+    const score = minScore + i * stepSize;
+    const percentage = (i / (totalSteps - 1)) * 100;
+    gradient += `${getColor(score)} ${percentage}%`;
+    if (i < totalSteps - 1) {
+      gradient += ", ";
+    }
+  }
+  return `linear-gradient(to right, ${gradient})`;
+};
+
 const SliderComponent = styled(Slider)(({ theme }) => ({
-  color: "#3a8589",
-  height: 3,
-  padding: "13px 0",
+  color: "#4ca751",
+  height: 7,
+  padding: "9px 0",
   "& .MuiSlider-markLabel": {
     fontSize: "0.7rem",
     top: 24,
-    color: "#3a85899e",
+    color: "#425243",
   },
   "& .MuiSlider-thumb": {
     height: 20,
@@ -27,13 +56,41 @@ const SliderComponent = styled(Slider)(({ theme }) => ({
       marginRight: 1,
     },
   },
+  "& .MuiSlider-mark": {
+    width: "0.5px",
+    height: "7px",
+    backgroundColor: "#f3f4f6",
+    transform: "translate(0px, -50%)",
+  },
   "& .MuiSlider-track": {
-    height: 3,
+    height: 7,
+    background: "transparent",
+  },
+  "& .MuiSlider-valueLabel": {
+    lineHeight: 1.2,
+    fontSize: 12,
+    background: "unset",
+    padding: 0,
+    width: 32,
+    height: 32,
+    borderRadius: "50% 50% 50% 0",
+    backgroundColor: "#52af77",
+    transformOrigin: "bottom left",
+    transform: "translate(50%, -100%) rotate(-45deg) scale(0)",
+    "&::before": { display: "none" },
+    "&.MuiSlider-valueLabelOpen": {
+      transform: "translate(50%, -100%) rotate(-45deg) scale(1)",
+    },
+    "& > *": {
+      transform: "rotate(45deg)",
+    },
   },
   "& .MuiSlider-rail": {
     color: theme.palette.mode === "dark" ? "#bfbfbf" : "#d8d8d8",
     opacity: theme.palette.mode === "dark" ? undefined : 1,
-    height: 3,
+    height: 7,
+    background: createGradient(),
+    borderRadius: 0,
   },
 }));
 
@@ -50,30 +107,7 @@ function ThumbComponent(props: ThumbComponentProps) {
     </SliderThumb>
   );
 }
-const minDistance = 25;
 
-const scale = (value: number) => {
-  if (value === undefined) {
-    return 0;
-  }
-  const previousMarkIndex = Math.floor(value / 25);
-  const previousMark = marks[previousMarkIndex];
-  const remainder = value % 25;
-  if (remainder === 0) {
-    return previousMark.scaledValue;
-  }
-  const nextMark = marks[previousMarkIndex + 1];
-  const increment = (nextMark.scaledValue - previousMark.scaledValue) / 25;
-  return remainder * increment + previousMark.scaledValue;
-};
-const unscale = (value: number) => {
-  const index = marks.findIndex((mark) => mark.scaledValue > value) - 1;
-  const lower = marks[index];
-  const upper = marks[index + 1];
-  const ratio =
-    (value - lower.scaledValue) / (upper.scaledValue - lower.scaledValue);
-  return lower.value + ratio * 25;
-};
 export default function CustomizedSlider({
   values,
   handleOptionsChange,
@@ -83,7 +117,7 @@ export default function CustomizedSlider({
 }) {
   const [value, setValue] = useState<number[]>([]);
   useEffect(() => {
-    setValue([unscale(values[0]), unscale(values[1])]);
+    setValue([values[0], values[1]]);
   }, [values]);
   const handleChange = (
     event: Event,
@@ -95,42 +129,41 @@ export default function CustomizedSlider({
     }
 
     if (activeThumb === 0) {
-      setValue([Math.min(newValue[0], value[1] - minDistance), value[1]]);
+      setValue([Math.min(newValue[0], value[1] - stepSize), value[1]]);
     } else {
-      setValue([value[0], Math.max(newValue[1], value[0] + minDistance)]);
+      setValue([value[0], Math.max(newValue[1], value[0] + stepSize)]);
     }
   };
 
   return (
     <div className="relative flex justify-center items-center">
       <SliderComponent
-        aria-label="Restricted values"
-        step={25}
-        max={300}
+        step={stepSize}
+        min={minScore}
+        max={maxScore}
+        disableSwap
         slots={{ thumb: ThumbComponent }}
         onChange={handleChange}
         onChangeCommitted={() => {
           handleOptionsChange({
-            minfico: scale(value[0]),
-            maxfico: scale(value[1]),
+            minfico: value[0],
+            maxfico: value[1],
           });
         }}
-        disableSwap
+        onChangeCapture={() => {
+          console.log("onChangeCapture");
+        }}
         value={value}
-        scale={scale}
         marks={marks}
         valueLabelDisplay="auto"
-        getAriaLabel={(index: number) =>
-          index === 0 ? "Minimum price" : "Maximum price"
-        }
       />
-      <div className="text-black absolute top-[25px] ">
+      <div className="text-black absolute top-[28px] ">
         <Typography
           variant="body2"
           color="textSecondary"
-          className="text-[#3a8589]"
+          className="text-textColor"
         >
-          {scale(value[0])}-{scale(value[1])}
+          {value[0]}-{value[1]}
         </Typography>
       </div>
     </div>

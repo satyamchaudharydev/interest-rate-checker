@@ -12,16 +12,33 @@ exports[`renders homepage unchanged 1`] = `
         class="w-full justify-between flex items-center"
       >
         <h1
-          class="text-[20px] text-[#070707] font-[600] text-left"
+          class="text-[20px] text-textColor font-[600] text-left"
         >
           Interest Rate Overview
         </h1>
         <button
           class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-colorPrimary mt-4 css-sghohy-MuiButtonBase-root-MuiButton-root"
-          style="background-color: rgb(76, 167, 81); color: rgb(255, 255, 255); border-radius: 4px; padding: 8px 16px; font-size: 14px; font-weight: 600; text-transform: capitalize; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05);"
+          style="background-color: rgb(76, 167, 81); color: rgb(255, 255, 255); border-radius: 4px; padding: 8px 16px; font-size: 14px; font-weight: 500; text-transform: capitalize; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05);"
           tabindex="0"
           type="button"
         >
+          <span
+            class="MuiButton-icon MuiButton-startIcon MuiButton-iconSizeMedium css-1d6wzja-MuiButton-startIcon"
+          >
+            <svg
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="16"
+            >
+              <path
+                d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </span>
           Download Chart
           <span
             class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
@@ -29,7 +46,7 @@ exports[`renders homepage unchanged 1`] = `
         </button>
       </div>
       <div
-        class="border rounded-lg bg-white relative overflow-hidden"
+        class="border rounded-lg bg-white relative overflow-hidden h-full"
         style="box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05);"
       >
         <div>
@@ -95,18 +112,18 @@ exports[`renders homepage unchanged 1`] = `
         style="box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05);"
       >
         <h2
-          class="text-[#070707] text-left text-[1rem] font-[600]"
+          class="text-textColor  text-left text-[1rem] font-[600]"
         >
           Explore rate options
         </h2>
         <div
-          class="mt-[2rem] flex flex-col gap-3 p-4 rounded-xl bg-[#FAFBFC]"
+          class="mt-[2rem] flex flex-col gap-4 p-4 rounded-xl bg-[#FAFBFC]"
         >
           <div
             class="flex flex-col"
           >
             <label
-              class="text-[#070707] !text-[12px] w-fit mb-2"
+              class="text-grayColor font-[500] !text-[12px] w-fit mb-2"
             >
               Credit Score Range
             </label>
@@ -117,14 +134,14 @@ exports[`renders homepage unchanged 1`] = `
                 class="relative flex justify-center items-center"
               >
                 <span
-                  class="MuiSlider-root MuiSlider-marked MuiSlider-colorPrimary MuiSlider-sizeMedium css-5355ny-MuiSlider-root"
+                  class="MuiSlider-root MuiSlider-marked MuiSlider-colorPrimary MuiSlider-sizeMedium css-mge0rh-MuiSlider-root"
                 >
                   <span
                     class="MuiSlider-rail css-7o8aqz-MuiSlider-rail"
                   />
                   <span
                     class="MuiSlider-track css-ttgsjq-MuiSlider-track"
-                    style="left: 41.666666666666664%; width: 16.66666666666667%;"
+                    style="left: 40%; width: 16%;"
                   />
                   <span
                     class="MuiSlider-mark css-hzp7sc-MuiSlider-mark"
@@ -142,155 +159,165 @@ exports[`renders homepage unchanged 1`] = `
                   <span
                     class="MuiSlider-mark css-hzp7sc-MuiSlider-mark"
                     data-index="1"
-                    style="left: 8.333333333333334%;"
+                    style="left: 8%;"
                   />
                   <span
                     aria-hidden="true"
                     class="MuiSlider-markLabel MuiSlider-markLabel css-1bvr8oc-MuiSlider-markLabel"
                     data-index="1"
-                    style="left: 8.333333333333334%;"
+                    style="left: 8%;"
                   />
                   <span
                     class="MuiSlider-mark css-hzp7sc-MuiSlider-mark"
                     data-index="2"
-                    style="left: 16.666666666666668%;"
+                    style="left: 16%;"
                   />
                   <span
                     aria-hidden="true"
                     class="MuiSlider-markLabel MuiSlider-markLabel css-1bvr8oc-MuiSlider-markLabel"
                     data-index="2"
-                    style="left: 16.666666666666668%;"
+                    style="left: 16%;"
                   />
                   <span
                     class="MuiSlider-mark css-hzp7sc-MuiSlider-mark"
                     data-index="3"
-                    style="left: 25%;"
+                    style="left: 24%;"
                   />
                   <span
                     aria-hidden="true"
                     class="MuiSlider-markLabel MuiSlider-markLabel css-1bvr8oc-MuiSlider-markLabel"
                     data-index="3"
-                    style="left: 25%;"
+                    style="left: 24%;"
                   />
                   <span
                     class="MuiSlider-mark css-hzp7sc-MuiSlider-mark"
                     data-index="4"
-                    style="left: 33.333333333333336%;"
+                    style="left: 32%;"
                   />
                   <span
                     aria-hidden="true"
                     class="MuiSlider-markLabel MuiSlider-markLabel css-1bvr8oc-MuiSlider-markLabel"
                     data-index="4"
-                    style="left: 33.333333333333336%;"
+                    style="left: 32%;"
                   />
                   <span
                     class="MuiSlider-mark MuiSlider-markActive css-z5sdnj-MuiSlider-mark"
                     data-index="5"
-                    style="left: 41.666666666666664%;"
+                    style="left: 40%;"
                   />
                   <span
                     aria-hidden="true"
                     class="MuiSlider-markLabel MuiSlider-markLabel MuiSlider-markLabelActive css-1ucwjgd-MuiSlider-markLabel"
                     data-index="5"
-                    style="left: 41.666666666666664%;"
+                    style="left: 40%;"
                   />
                   <span
                     class="MuiSlider-mark MuiSlider-markActive css-z5sdnj-MuiSlider-mark"
                     data-index="6"
-                    style="left: 50%;"
+                    style="left: 48%;"
                   />
                   <span
                     aria-hidden="true"
                     class="MuiSlider-markLabel MuiSlider-markLabel MuiSlider-markLabelActive css-1ucwjgd-MuiSlider-markLabel"
                     data-index="6"
-                    style="left: 50%;"
+                    style="left: 48%;"
                   />
                   <span
                     class="MuiSlider-mark MuiSlider-markActive css-z5sdnj-MuiSlider-mark"
                     data-index="7"
-                    style="left: 58.333333333333336%;"
+                    style="left: 56%;"
                   />
                   <span
                     aria-hidden="true"
                     class="MuiSlider-markLabel MuiSlider-markLabel MuiSlider-markLabelActive css-1ucwjgd-MuiSlider-markLabel"
                     data-index="7"
-                    style="left: 58.333333333333336%;"
+                    style="left: 56%;"
                   />
                   <span
                     class="MuiSlider-mark css-hzp7sc-MuiSlider-mark"
                     data-index="8"
-                    style="left: 66.66666666666667%;"
+                    style="left: 64%;"
                   />
                   <span
                     aria-hidden="true"
                     class="MuiSlider-markLabel MuiSlider-markLabel css-1bvr8oc-MuiSlider-markLabel"
                     data-index="8"
-                    style="left: 66.66666666666667%;"
+                    style="left: 64%;"
                   />
                   <span
                     class="MuiSlider-mark css-hzp7sc-MuiSlider-mark"
                     data-index="9"
-                    style="left: 75%;"
+                    style="left: 72%;"
                   />
                   <span
                     aria-hidden="true"
                     class="MuiSlider-markLabel MuiSlider-markLabel css-1bvr8oc-MuiSlider-markLabel"
                     data-index="9"
-                    style="left: 75%;"
+                    style="left: 72%;"
                   />
                   <span
                     class="MuiSlider-mark css-hzp7sc-MuiSlider-mark"
                     data-index="10"
-                    style="left: 83.33333333333333%;"
+                    style="left: 80%;"
                   />
                   <span
                     aria-hidden="true"
                     class="MuiSlider-markLabel MuiSlider-markLabel css-1bvr8oc-MuiSlider-markLabel"
                     data-index="10"
-                    style="left: 83.33333333333333%;"
+                    style="left: 80%;"
                   />
                   <span
                     class="MuiSlider-mark css-hzp7sc-MuiSlider-mark"
                     data-index="11"
-                    style="left: 91.66666666666667%;"
+                    style="left: 88%;"
                   />
                   <span
                     aria-hidden="true"
                     class="MuiSlider-markLabel MuiSlider-markLabel css-1bvr8oc-MuiSlider-markLabel"
                     data-index="11"
-                    style="left: 91.66666666666667%;"
+                    style="left: 88%;"
                   />
                   <span
                     class="MuiSlider-mark css-hzp7sc-MuiSlider-mark"
                     data-index="12"
+                    style="left: 96%;"
+                  />
+                  <span
+                    aria-hidden="true"
+                    class="MuiSlider-markLabel MuiSlider-markLabel css-1bvr8oc-MuiSlider-markLabel"
+                    data-index="12"
+                    style="left: 96%;"
+                  />
+                  <span
+                    class="MuiSlider-mark css-hzp7sc-MuiSlider-mark"
+                    data-index="13"
                     style="left: 100%;"
                   />
                   <span
                     aria-hidden="true"
                     class="MuiSlider-markLabel MuiSlider-markLabel css-1bvr8oc-MuiSlider-markLabel"
-                    data-index="12"
+                    data-index="13"
                     style="left: 100%;"
                   >
-                    840
+                    850
                   </span>
                   <span
                     class="MuiSlider-thumb MuiSlider-thumbSizeMedium MuiSlider-thumbColorPrimary MuiSlider-thumb MuiSlider-thumbSizeMedium MuiSlider-thumbColorPrimary css-cp2j25-MuiSlider-thumb"
                     data-index="0"
-                    style="left: 41.666666666666664%;"
+                    style="left: 40%;"
                   >
                     <input
-                      aria-label="Minimum price"
                       aria-orientation="horizontal"
-                      aria-valuemax="840"
+                      aria-valuemax="850"
                       aria-valuemin="600"
                       aria-valuenow="700"
                       data-index="0"
-                      max="300"
-                      min="0"
-                      step="25"
+                      max="850"
+                      min="600"
+                      step="20"
                       style="border: 0px; height: 100%; margin: -1px; overflow: hidden; padding: 0px; position: absolute; white-space: nowrap; width: 100%; direction: ltr;"
                       type="range"
-                      value="125"
+                      value="700"
                     />
                     <span
                       aria-hidden="true"
@@ -319,21 +346,20 @@ exports[`renders homepage unchanged 1`] = `
                   <span
                     class="MuiSlider-thumb MuiSlider-thumbSizeMedium MuiSlider-thumbColorPrimary MuiSlider-thumb MuiSlider-thumbSizeMedium MuiSlider-thumbColorPrimary css-cp2j25-MuiSlider-thumb"
                     data-index="1"
-                    style="left: 58.333333333333336%;"
+                    style="left: 56%;"
                   >
                     <input
-                      aria-label="Maximum price"
                       aria-orientation="horizontal"
-                      aria-valuemax="840"
+                      aria-valuemax="850"
                       aria-valuemin="600"
                       aria-valuenow="740"
                       data-index="1"
-                      max="300"
-                      min="0"
-                      step="25"
+                      max="850"
+                      min="600"
+                      step="20"
                       style="border: 0px; height: 100%; margin: -1px; overflow: hidden; padding: 0px; position: absolute; white-space: nowrap; width: 100%; direction: ltr;"
                       type="range"
-                      value="175"
+                      value="740"
                     />
                     <span
                       aria-hidden="true"
@@ -361,10 +387,10 @@ exports[`renders homepage unchanged 1`] = `
                   </span>
                 </span>
                 <div
-                  class="text-black absolute top-[25px] "
+                  class="text-black absolute top-[28px] "
                 >
                   <p
-                    class="MuiTypography-root MuiTypography-body2 text-[#3a8589] css-r40f8v-MuiTypography-root"
+                    class="MuiTypography-root MuiTypography-body2 text-textColor css-r40f8v-MuiTypography-root"
                   >
                     700
                     -
@@ -378,7 +404,7 @@ exports[`renders homepage unchanged 1`] = `
             class="flex flex-col"
           >
             <label
-              class="text-[#070707] !text-[12px] w-fit mb-2"
+              class="text-grayColor font-[500] !text-[12px] w-fit mb-2"
             >
               Choose Your State
                
@@ -434,7 +460,7 @@ exports[`renders homepage unchanged 1`] = `
             class="flex flex-col"
           >
             <label
-              class="text-[#070707] !text-[12px] w-fit mb-2"
+              class="text-grayColor font-[500] !text-[12px] w-fit mb-2"
             >
               Enter House Price
                
@@ -478,7 +504,7 @@ exports[`renders homepage unchanged 1`] = `
             class="flex flex-col"
           >
             <label
-              class="text-[#070707] !text-[12px] w-fit mb-2"
+              class="text-grayColor font-[500] !text-[12px] w-fit mb-2"
             >
               Rate Type
             </label>
@@ -496,7 +522,7 @@ exports[`renders homepage unchanged 1`] = `
                 </span>
                 <div
                   class="absolute inset-0 bg-white rounded-md shadow-md"
-                  layoutid="utby8wh"
+                  layoutid="q9hsfm"
                   transition="[object Object]"
                 />
               </button>
@@ -516,7 +542,7 @@ exports[`renders homepage unchanged 1`] = `
             class="flex flex-col"
           >
             <label
-              class="text-[#070707] !text-[12px] w-fit mb-2"
+              class="text-grayColor font-[500] !text-[12px] w-fit mb-2"
             >
               Loan Term
             </label>
@@ -544,7 +570,7 @@ exports[`renders homepage unchanged 1`] = `
                 </span>
                 <div
                   class="absolute inset-0 bg-white rounded-md shadow-md"
-                  layoutid="1fpm7"
+                  layoutid="kmmu1"
                   transition="[object Object]"
                 />
               </button>
@@ -554,7 +580,7 @@ exports[`renders homepage unchanged 1`] = `
             class="flex flex-col"
           >
             <label
-              class="text-[#070707] !text-[12px] w-fit mb-2"
+              class="text-grayColor font-[500] !text-[12px] w-fit mb-2"
             >
               Loan Term
             </label>
@@ -572,7 +598,7 @@ exports[`renders homepage unchanged 1`] = `
                 </span>
                 <div
                   class="absolute inset-0 bg-white rounded-md shadow-md"
-                  layoutid="mr0lh9"
+                  layoutid="4lnuaw"
                   transition="[object Object]"
                 />
               </button>
